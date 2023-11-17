@@ -192,6 +192,15 @@ public class ProjecStepdefination {
         Project.toster();
     }
 
+    @And("clicks on uploadinvalid  icon")
+    public void clicksOnUploadinvalidIcon()
+    {
+        Project.uploadiconinvalid();
+    }
+
+
+
+
 //    @And("user enters the text into text filed")
 //    public void userEntersTheTextIntoTextFiled() {
 //        Project.filtertext();

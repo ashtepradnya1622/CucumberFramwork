@@ -110,7 +110,7 @@ public class Login extends Base {
 
     public void LINK()
     {
-        sendValueToTextfield(userid, "Pradnya.Ashte+PM@coditas.com");
+        sendValueToTextfield(userid, Env.config.emailid1());
     }
 
     public void click1()

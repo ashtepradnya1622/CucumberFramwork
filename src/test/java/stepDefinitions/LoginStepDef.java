@@ -4,6 +4,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import object.Login;
+import object.Logout;
 
 public class LoginStepDef {
     Login login;
@@ -50,12 +51,14 @@ public class LoginStepDef {
     }
 
     @Given("user is on the login page")
-    public void the_user_is_on_the_login_page() {
+    public void the_user_is_on_the_login_page()
+    {
 
     }
 
     @When("user clicks the {string} link")
-    public void the_user_clicks_the_link(String string) {
+    public void the_user_clicks_the_link(String string)
+    {
         login.Forgotpassword();
     }
 

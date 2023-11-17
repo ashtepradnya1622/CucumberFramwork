@@ -24,5 +24,8 @@ public interface Env extends Config
     String name();
     @Key("vpass1")
     String pass1();
-
+    @Key("url1")
+    String url1();
+    @Key("emailid1")
+    String emailid1();
 }

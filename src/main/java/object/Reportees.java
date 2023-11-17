@@ -21,17 +21,14 @@ public class Reportees extends Base {
         this.driver = driver();
 
     }
-
     @FindBy(linkText = "Reportees")
     public WebElement clicking;
-
     @FindBy(xpath = "//div[text()='pradnya.ashte+pm2@coditas.com']/parent::div/parent::div//img[@alt='edit-details-button']/parent::button")
     public WebElement reporteesEditButton;
     @FindBy(xpath = "//div[text()='pradnya.ashte+pm2@coditas.com']/parent::div/parent::div//img[@alt='view-details-button']/parent::button")
     public WebElement Viewbutton;
 //    @FindBy(xpath = "//div[text()='priyanka.patil+PM2@coditas.com']/parent::div/parent::div//img[@alt='edit-details-button']/parent::button")
 //    public WebElement pmreporteeseditbutton;
-
     @FindBy(css = "img[alt*='edit-details-button']")
     public WebElement clicking2;
     @FindBy(xpath = "//input[@name='firstName']")

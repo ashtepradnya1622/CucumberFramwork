@@ -17,10 +17,10 @@ public class Reporteestepdefination {
     Reportees reportees;
 
 
-    public Reporteestepdefination(Reportees reportees, Login login) {
+    public Reporteestepdefination(Reportees reportees, Login login)
+    {
         this.login = login;
         this.reportees = reportees;
-
     }
 
     @Then("user clicks on Reportees tab")

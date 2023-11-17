@@ -75,6 +75,16 @@ public class Base {
             throw e;
         }
     }
+    public boolean isElementVisible(WebElement element)
+    {
+        //try {
+        wait.until(ExpectedConditions.visibilityOf(element));
+        System.out.println(element+ " is visible");
+        return true;
+        //} catch (Exception e) {
+        //System.out.println(element+ " is not visible");
+        // return false;
+         }
 
     public void waitForElement(WebElement element) {
         try {

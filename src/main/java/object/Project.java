@@ -7,6 +7,9 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindAll;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 import util.Base;
 import util.Upload;
 
@@ -214,34 +217,24 @@ public void Editphasedropdown()
         JSClick(icon);
         Upload.file("C:\\Users\\Coditas\\Desktop\\Automation\\CSV\\act01CSV .csv");
     }
+    public void uploadiconinvalid()
+    {
+        JSClick(icon);
+        Upload.file("C:\\Users\\Coditas\\Downloads\\inv.csv");
+    }
     public void done()
     {
         JSClick(Done);
     }
     public void toster()
     {
-//        WebElement triggerElement = driver.findElement(By.cssSelector("Toastify__toast-body"));
-        JSClick(tostermsg);
-        try {
-            Thread.sleep(3000); // Wait for 3 seconds
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+        Assert.assertTrue(isElementVisible(tostermsg),tostermsg+ "is not visible");
+        String expectedText = "Unique Personnel Numbers added to ‘Employees’!";
+        String actualText = tostermsg.getText();
 
-        //WebElement toasterElement = driver.findElement(By.cssSelector("toasterMessage"));
+        Assert.assertEquals(actualText,expectedText,"Expected: "+expectedText+ "\n Found: "+actualText);
+        System.out.println("Expected: "+expectedText+ "\n Found: "+actualText);
 
-        // Get the text of the toaster message
-        String actualMessage = tostermsg.getText();
-
-        // Define the expected message
-        String expectedMessage = "Unique Personnel Numbers added to ‘Employees’!";
-
-        // Verify that the actual message matches the expected message
-        if (actualMessage.equals(expectedMessage)) {
-            System.out.println("Toaster message text is as expected: " + actualMessage);
-        } else {
-            System.out.println("Toaster message text is not as expected. Actual: " + actualMessage);
-        }
     }
     public void filter()
     {
