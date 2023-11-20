@@ -133,45 +133,31 @@ public class Reportees extends Base {
         fname.sendKeys("Piyush");
 
     }
-
     public void editlname2() {
         lname.clear();
         lname.sendKeys("Deshpande");
     }
-
     public void dropdown() {
         waitAndClick(dropdownArrow);
         Clickonjs(projectManager);
     }
-
-    //    public void dropdown2()
-//    {
-//        waitAndJSClick(dropdownArrow);
-//        waitAndJSClick(principal);
-//    }
     public void viewButton() {
         Clickonjs(Viewbutton);
-
-
     }
     public void Arrow()
     {
         Clickonjs(Emailsorting);
         //Emailsorting.click();
-
     }
-
     @FindAll(@FindBy(xpath = "//div[@data-state-props-id=\"email\"]"))
     public List<WebElement> emailList;
 
     public void clickEdit(String email) {
-
         for (WebElement element : emailList) {
             // Check the text of each link and click on a specific link
             String linkText = element.getText();
             if (linkText.equals(email)) {
                 System.out.println(linkText + " : matched");
-
                 String editBtnLocater = "//div[text()='%email']/parent::div/parent::div//img[@alt='edit-details-button']/parent::button";
                 editBtnLocater = editBtnLocater.replace("%email", email);
                 WebElement editBtn = driver.findElement(By.xpath(editBtnLocater));
@@ -180,7 +166,6 @@ public class Reportees extends Base {
                 System.out.println(linkText + " : not matched");
             }
         }
-
     }
     public List<String> getEmailList(){
         List<String> emailList = new ArrayList<>();
@@ -193,15 +178,12 @@ public class Reportees extends Base {
     public boolean isEmailListSorted(List<String> emailList){
         return isListSorted(emailList);
     }
-
     public void clickview(String email) {
-
         for (WebElement element : emailList) {
             // Check the text of each link and click on a specific link
             String linkText = element.getText();
             if (linkText.equals(email)) {
                 System.out.println(linkText + " : matched");
-
                 String viewBtnLocater = "//div[text()='%email']/parent::div/parent::div//img[@alt='view-details-button']/parent::button";
                 viewBtnLocater = viewBtnLocater.replace("%email", email);
                 WebElement editBtn = driver.findElement(By.xpath(viewBtnLocater));
@@ -210,12 +192,9 @@ public class Reportees extends Base {
                 System.out.println(linkText + " : not matched");
             }
         }
-
     }
-
     public void verifytextPE()
     {
-
         String actualText = verify.getText();
         String expectedText = "No PO Assigned";
         Assert.assertEquals(expectedText, actualText);
@@ -227,7 +206,7 @@ public class Reportees extends Base {
             System.out.println("Text verification failed.");
         }
     }
-        public void principalverification()
+    public void principalverification()
         {
             String actualText1 = verify.getText();
             String expectedText1 = "No Projects Added";
@@ -239,7 +218,6 @@ public class Reportees extends Base {
             {
                 System.out.println("Text verification failed.");
             }
-
         }
     }
 
